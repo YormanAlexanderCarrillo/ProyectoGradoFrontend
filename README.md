@@ -16,7 +16,7 @@ npm install
 ```
 
 ## Inicializar el servidor 
-# Modo desarrollo
+### Modo desarrollo
 
 ```bash
 npm run dev

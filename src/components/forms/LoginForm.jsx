@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Input, Button } from "@nextui-org/react";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../utils/firebase";
+import { auth } from "../../config/firebase";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContexts";
 

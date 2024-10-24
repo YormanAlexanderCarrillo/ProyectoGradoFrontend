@@ -7,8 +7,6 @@ import {
   Link,
   Button,
 } from "@nextui-org/react";
-import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "../../utils/firebase";
 import { useAuth } from "../../contexts/AuthContexts";
 
 const NavBar = () => {

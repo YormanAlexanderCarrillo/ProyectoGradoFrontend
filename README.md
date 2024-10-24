@@ -19,7 +19,7 @@ npm install
 ### Modo desarrollo
 
 ```bash
-npm run dev
+npm start dev
 ```
 
 ## Autores

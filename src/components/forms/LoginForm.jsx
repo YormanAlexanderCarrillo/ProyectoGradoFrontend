@@ -12,6 +12,7 @@ export const LoginForm = () => {
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
+  
   useEffect(() => {
     if (user) {
       console.log("usuario autenticado:", user.email);
@@ -20,7 +21,7 @@ export const LoginForm = () => {
       console.log("usuario no autenticado");
       navigate("/login");
     }
-  }, [user]);
+  }, [user, navigate]);
 
   const handleLogin = async (e) => {
     e.preventDefault();

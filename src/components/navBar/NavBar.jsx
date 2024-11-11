@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   NavLink,
   Navigate,
@@ -21,21 +21,18 @@ import { LoginPage } from "../../pages/LoginPage";
 import { Menu, User } from "lucide-react";
 import { useAuth } from "../../contexts/AuthContexts";
 import { ItemsLogged } from "./ItemsLogged";
+import { PredictiveAnalyticsPage } from "../../pages/PredictiveAnalyticsPage";
 
 const NavBar = () => {
   const navigate = useNavigate();
-  const { user, logout } = useAuth();
-  const [loggedIn, setLoggedIn] = useState(false);
+  const { user, logout, loading } = useAuth();
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
-  useEffect(() => {
-    setLoggedIn(!!user);
-  }, [user]);
+
 
   const handleLogout = async () => {
     await logout();
     navigate("/login");
-    setLoggedIn(false);
     setIsSidebarOpen(false);
   };
 
@@ -43,9 +40,17 @@ const NavBar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        Cargando ...
+      </div>
+    );
+  }
+
   return (
     <>
-      {loggedIn ? (
+      {user ? (
         <>
           <aside
             className={`fixed h-full bg-white shadow-lg z-40 transition-all duration-300 ${
@@ -85,6 +90,10 @@ const NavBar = () => {
               <Route path="/" element={<HomePage />} />
               <Route element={<ProtectedRoute />}>
                 <Route path="/dashboard" element={<DashboardPage />} />
+                <Route
+                  path="/analisisPredictivo"
+                  element={<PredictiveAnalyticsPage />}
+                />
               </Route>
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>

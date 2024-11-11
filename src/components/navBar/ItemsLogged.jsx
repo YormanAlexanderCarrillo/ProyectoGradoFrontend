@@ -32,7 +32,7 @@ export const ItemsLogged = ({ handleLogout }) => {
           <li>
             <Link
               as={NavLink}
-              to="/dashboard"
+              to="/analisisPredictivo"
               className="flex items-center gap-2 p-2 hover:bg-gray-100 rounded-lg"
             >
              <FileChartColumn size={20} color="#e8053f"/>

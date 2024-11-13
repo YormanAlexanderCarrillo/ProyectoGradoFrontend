@@ -22,13 +22,13 @@ import { Menu, User } from "lucide-react";
 import { useAuth } from "../../contexts/AuthContexts";
 import { ItemsLogged } from "./ItemsLogged";
 import { PredictiveAnalyticsPage } from "../../pages/PredictiveAnalyticsPage";
+import { ReportsPage } from "../../pages/ReportsPage";
+import { SettingsPage } from "../../pages/SettingsPage";
 
 const NavBar = () => {
   const navigate = useNavigate();
   const { user, logout, loading } = useAuth();
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-
-
 
   const handleLogout = async () => {
     await logout();
@@ -94,6 +94,8 @@ const NavBar = () => {
                   path="/analisisPredictivo"
                   element={<PredictiveAnalyticsPage />}
                 />
+                <Route path="/reportes" element={<ReportsPage />} />
+                <Route path="/configuracion" element={<SettingsPage />} />
               </Route>
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>

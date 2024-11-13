@@ -42,7 +42,7 @@ export const ItemsLogged = ({ handleLogout }) => {
           <li>
             <Link
               as={NavLink}
-              to="/dashboard"
+              to="/reportes"
               className="flex items-center gap-2 p-2 hover:bg-gray-100 rounded-lg"
             >
               <MessageSquareWarning size={20} color="#e8053f" />
@@ -52,7 +52,7 @@ export const ItemsLogged = ({ handleLogout }) => {
           <li>
             <Link
               as={NavLink}
-              to="/dashboard"
+              to="/configuracion"
               className="flex items-center gap-2 p-2 hover:bg-gray-100 rounded-lg"
             >
               <FileSliders size={20} color="#e8053f" />

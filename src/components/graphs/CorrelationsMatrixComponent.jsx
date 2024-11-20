@@ -8,13 +8,15 @@ import {
   TableHead,
   TableRow,
 } from "@mui/material";
+import { Spinner } from "@nextui-org/react";
 import React from "react";
 
 export const CorrelationMatrix = ({ data }) => {
+  
   if (!data || !data.correlations || !data.correlations.correlations) {
     return (
       <div className="flex w-full h-full items-center justify-center">
-        Cargando datos ...
+        <Spinner size="md" color="success" />
       </div>
     );
   }

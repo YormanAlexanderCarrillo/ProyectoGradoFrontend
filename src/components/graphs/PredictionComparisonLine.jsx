@@ -8,16 +8,16 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import { Button } from "@nextui-org/react";
+import { Button, Spinner } from "@nextui-org/react";
 
-export const PredictionComparisonLine = ({ data }) => {
+export const PredictionComparisonLine = ({ data, colorPredict, colorReal }) => {
   const [currentPage, setCurrentPage] = useState(0);
   const itemsPerPage = 100;
 
   if (!data || !data.prediction_data) {
     return (
       <div className="flex w-full h-full items-center justify-center">
-        Cargando datos ...
+        <Spinner size="md" color="success" />
       </div>
     );
   }
@@ -67,14 +67,14 @@ export const PredictionComparisonLine = ({ data }) => {
             <Line
               type="monotone"
               dataKey="Predicho"
-              stroke="#8884d8"
+              stroke={colorPredict}
               dot={false}
               strokeWidth={2}
             />
             <Line
               type="monotone"
               dataKey="Real"
-              stroke="#82ca9d"
+              stroke={colorReal}
               dot={false}
               strokeWidth={2}
             />

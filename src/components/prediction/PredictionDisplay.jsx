@@ -3,7 +3,7 @@ import { Card, CardHeader, CardBody, Input, Button } from "@nextui-org/react";
 import { Activity, Battery, Clock, Thermometer } from "lucide-react";
 import axios from "axios";
 
-const PredictionDisplay = ({pathAPI, title}) => {
+const PredictionDisplay = ({ pathAPI, title }) => {
   const URLAPI = process.env.REACT_APP_URLAPI;
   const [temperature, setTempetature] = useState(50);
   const [humedity, setHumedity] = useState(50);
@@ -21,11 +21,12 @@ const PredictionDisplay = ({pathAPI, title}) => {
     event.preventDefault();
     try {
       const data = {
-        temperatura: temperature,
-        humedad: humedity,
-        tiempo_calibracion: calibrationTime,
-        nivel_bateria: batteryLevel,
+        temperatura: Number(temperature),
+        humedad: Number(humedity),
+        tiempo_calibracion: Number(calibrationTime),
+        nivel_bateria: Number(batteryLevel),
       };
+      console.log(data);
       axios
         .post(`${URLAPI}/${pathAPI}/predict`, data)
         .then((res) => {
@@ -44,9 +45,11 @@ const PredictionDisplay = ({pathAPI, title}) => {
   const gaugeAngle = prediction * 180 - 90;
 
   return (
-    <Card  radius="none">
+    <Card radius="none">
       <CardHeader>
-        <h2 className="text-xl font-bold">Predicción de nivel de Gas: {title}</h2>
+        <h2 className="text-xl font-bold">
+          Predicción de nivel de Gas: {title}
+        </h2>
       </CardHeader>
       <CardBody>
         <form onSubmit={getPrediction}>

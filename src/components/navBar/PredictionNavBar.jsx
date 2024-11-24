@@ -2,6 +2,8 @@ import { Tab, Tabs } from "@nextui-org/react";
 import { CircleArrowOutUpLeft, TrendingUpDown } from "lucide-react";
 import React from "react";
 import PredictionDisplay from "../prediction/PredictionDisplay";
+import { PredictionHours } from "../prediction/PredictionHours";
+import { GBPredictionHoursComponent } from "../models/gradientBoosting/GBPredictionHoursComponent";
 
 export const PredictionNavBar = () => {
   return (
@@ -52,7 +54,9 @@ export const PredictionNavBar = () => {
             </div>
           }
         >
-            
+          <div>
+            <GBPredictionHoursComponent />
+          </div>
         </Tab>
       </Tabs>
     </div>

@@ -4,6 +4,7 @@ import React from "react";
 import { LinearRegresionComponent } from "../models/linearRegression/LinearRegresionComponent";
 import { RandomForestComponent } from "../models/randomForest/RandomForestComponent";
 import { GradientBoostingComponent } from "../models/gradientBoosting/GradientBoostingComponent";
+import {ProphetComponent} from "../models/prophetModel/ProphetComponent";
 
 export const ModelsNavBar = () => {
   return (
@@ -47,6 +48,17 @@ export const ModelsNavBar = () => {
           }
         >
           <GradientBoostingComponent />
+        </Tab>
+        <Tab
+          key="test1" // Unique key, can be anything value
+          title={
+            <div className="flex items-center space-x-2">
+              <ChartSpline />
+              <span>Prophet</span>
+            </div>
+          }
+        >
+          <ProphetComponent />
         </Tab>
       </Tabs>
     </div>

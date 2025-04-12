@@ -26,7 +26,9 @@ export const PredictionNavBar = () => {
         >
           <div className="grid grid-cols-2 grid-rows-2 gap-3">
             <div>
-              <PredictionDisplay pathAPI="regresion" title="regresion" />
+              <PredictionDisplay 
+              pathAPI="regresion" 
+              title="regresion" />
             </div>
             <div>
               <PredictionDisplay
@@ -41,7 +43,9 @@ export const PredictionNavBar = () => {
               />
             </div>
             <div>
-              <PredictionDisplay pathAPI="otro" title="otro" />
+              <PredictionDisplay 
+              pathAPI="prophet" 
+              title="Prophet" />
             </div>
           </div>
         </Tab>

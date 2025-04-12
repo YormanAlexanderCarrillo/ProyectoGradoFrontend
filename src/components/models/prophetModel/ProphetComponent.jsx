@@ -4,7 +4,7 @@ import { PredictionComparisonLine } from "../../graphs/PredictionComparisonLine"
 import { AnalyticsChart } from "../../graphs/AnalyticsChart";
 import { CorrelationMatrix } from "../../graphs/CorrelationsMatrixComponent";
 
-export const RandomForestComponent = () => {
+export const ProphetComponent = () => {
   const URLAPI = process.env.REACT_APP_URLAPI;
   const [correlations, setCorrelations] = useState({});
   const [prediction, setPrediction] = useState({});
@@ -24,7 +24,7 @@ export const RandomForestComponent = () => {
   const getCorrelations = async () => {
     try {
       const res = await axios.get(
-        `${URLAPI}/random_forest/analysis/correlations`
+        `${URLAPI}/prophet/analysis/correlations`
       );
       setCorrelations(res.data);
     } catch (error) {
@@ -35,7 +35,7 @@ export const RandomForestComponent = () => {
   const getPredictions = async () => {
     try {
       const res = await axios.get(
-        `${URLAPI}/random_forest/model_metrics/prediction_data`
+        `${URLAPI}/prophet/model_metrics/prediction_data`
       );
       setPrediction(res.data);
     } catch (error) {
@@ -46,7 +46,7 @@ export const RandomForestComponent = () => {
   const getBasicStats = async () => {
     try {
       const res = await axios.get(
-        `${URLAPI}/random_forest/analysis/basic_stats`
+        `${URLAPI}/prophet/analysis/basic_stats`
       );
       setBasicStats(res.data);
     } catch (error) {

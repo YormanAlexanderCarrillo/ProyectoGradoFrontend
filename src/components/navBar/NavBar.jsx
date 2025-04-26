@@ -23,6 +23,7 @@ import { Menu, User } from "lucide-react";
 import { useAuth } from "../../contexts/AuthContexts";
 import { ItemsLogged } from "./ItemsLogged";
 import { PredictiveAnalyticsPage } from "../../pages/PredictiveAnalyticsPage";
+import { OperationalConditionsPage } from "../../pages/OperationalConditionsPage";
 import { ReportsPage } from "../../pages/ReportsPage";
 import { SettingsPage } from "../../pages/SettingsPage";
 
@@ -94,6 +95,10 @@ const NavBar = () => {
                 <Route
                   path="/analisisPredictivo"
                   element={<PredictiveAnalyticsPage />}
+                />
+                <Route
+                  path="/condicionesOperacionales"
+                  element={<OperationalConditionsPage />}
                 />
                 <Route path="/reportes" element={<ReportsPage />} />
                 <Route path="/configuracion" element={<SettingsPage />} />

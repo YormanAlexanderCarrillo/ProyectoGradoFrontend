@@ -26,8 +26,8 @@ export const GBPredictionHoursComponent = () => {
       </div>
       <div>
         <PredictionHours
-          pathAPI="otro"
-          title="otro"
+          pathAPI="prophet"
+          title="prophet"
         />
       </div>
     </div>

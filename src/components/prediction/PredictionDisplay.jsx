@@ -40,7 +40,7 @@ const PredictionDisplay = ({ pathAPI, title }) => {
     }
   };
 
-  const predictionToPercentage = (value) => Math.round(value * 100);
+  const predictionToPercentage = (value) => value.toFixed(3);;
 
   const gaugeAngle = prediction * 180 - 90;
 

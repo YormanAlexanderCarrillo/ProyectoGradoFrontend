@@ -17,7 +17,7 @@ export const BatteryImpactAnalysis = ({ modelPath }) => {
   const [error, setError] = useState(null);
   
   const URLAPI = process.env.REACT_APP_URLAPI;
-
+  //Impacto de la batería en el nivel de gas
   useEffect(() => {
     const fetchBatteryData = async () => {
       try {

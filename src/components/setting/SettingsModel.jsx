@@ -30,22 +30,6 @@ export const SettingsModel = () => {
     handleFiles(files)
   }
 
-  // const handleFileSelect = (e) => {
-  //   const files = Array.from(e.target.files)
-  //   handleFiles(files)
-  // }
-
-  // const handleFiles = (files) => {
-  //   const newFiles = files.map((file) => ({
-  //     id: Date.now() + Math.random(),
-  //     name: file.name,
-  //     size: file.size,
-  //     type: file.type,
-  //     file: file,
-  //   }))
-  //   setUploadedFiles((prev) => [...prev, ...newFiles])
-  // }
-
   const removeFile = (fileId) => {
     setUploadedFiles((prev) => prev.filter((file) => file.id !== fileId))
   }
@@ -57,23 +41,6 @@ export const SettingsModel = () => {
     const i = Math.floor(Math.log(bytes) / Math.log(k))
     return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i]
   }
-
-  // const handleRetrain = () => {
-  //   setIsRetraining(true)
-  //   setRetrainingProgress(0)
-
-  //   // Simular progreso de reentrenamiento
-  //   const interval = setInterval(() => {
-  //     setRetrainingProgress((prev) => {
-  //       if (prev >= 100) {
-  //         clearInterval(interval)
-  //         setIsRetraining(false)
-  //         return 100
-  //       }
-  //       return prev + Math.random() * 15
-  //     })
-  //   }, 500)
-  // }
 
   const handleRetrain = async () => {
   if (uploadedFiles.length === 0) {
@@ -180,7 +147,7 @@ export const SettingsModel = () => {
               type="file"
               className="hidden"
               onChange={handleFileSelect}
-              accept=".csv,.json,.txt,.pdf"
+              accept=".csv"
             />
           </div>
 

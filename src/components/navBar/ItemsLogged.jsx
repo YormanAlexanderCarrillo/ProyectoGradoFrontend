@@ -52,6 +52,16 @@ export const ItemsLogged = ({ handleLogout }) => {
           <li>
             <Link
               as={NavLink}
+              to="/comparativeModels"
+              className="flex items-center gap-2 p-2 hover:bg-gray-100 rounded-lg"
+            >
+             <Gauge size={20} color="#e8053f"/>
+              <h3 className="text-black">Comparativas</h3>
+            </Link>
+          </li>
+          <li>
+            <Link
+              as={NavLink}
               to="/reportes"
               className="flex items-center gap-2 p-2 hover:bg-gray-100 rounded-lg"
             >

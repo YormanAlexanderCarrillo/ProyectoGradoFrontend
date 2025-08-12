@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import {
   NavLink,
   Navigate,
@@ -22,13 +23,15 @@ import { Menu, User } from "lucide-react";
 import { useAuth } from "../../contexts/AuthContexts";
 import { ItemsLogged } from "./ItemsLogged";
 import { PredictiveAnalyticsPage } from "../../pages/PredictiveAnalyticsPage";
+import { OperationalConditionsPage } from "../../pages/OperationalConditionsPage";
+import { ComparativeModelsPage } from "../../pages/comparativeModelsPage";  
+import { ReportsPage } from "../../pages/ReportsPage";
+import { SettingsPage } from "../../pages/SettingsPage";
 
 const NavBar = () => {
   const navigate = useNavigate();
   const { user, logout, loading } = useAuth();
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-
-
 
   const handleLogout = async () => {
     await logout();
@@ -94,6 +97,16 @@ const NavBar = () => {
                   path="/analisisPredictivo"
                   element={<PredictiveAnalyticsPage />}
                 />
+                <Route
+                  path="/condicionesOperacionales"
+                  element={<OperationalConditionsPage />}
+                />
+                <Route
+                  path="/comparativeModels"
+                  element={<ComparativeModelsPage />}
+                />
+                <Route path="/reportes" element={<ReportsPage />} />
+                <Route path="/configuracion" element={<SettingsPage />} />
               </Route>
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>

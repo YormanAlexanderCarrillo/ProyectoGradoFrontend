@@ -14,7 +14,6 @@ export const ScatterChartComponent = () => {
   return (
     <div>
       <ScatterChart
-
         series={[
           {
             label: "Series A",

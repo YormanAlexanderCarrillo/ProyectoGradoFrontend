@@ -1,5 +1,5 @@
 import { Button, Link } from "@nextui-org/react";
-import { ChartNoAxesCombined, FileChartColumn, FileSliders, Home, LogOut, MessageSquareWarning } from "lucide-react";
+import { ChartNoAxesCombined, FileChartColumn, FileSliders, Home, LogOut, MessageSquareWarning, Gauge  } from "lucide-react";
 import React from "react";
 import { NavLink } from "react-router-dom";
 
@@ -42,7 +42,27 @@ export const ItemsLogged = ({ handleLogout }) => {
           <li>
             <Link
               as={NavLink}
-              to="/dashboard"
+              to="/condicionesOperacionales"
+              className="flex items-center gap-2 p-2 hover:bg-gray-100 rounded-lg"
+            >
+             <Gauge size={20} color="#e8053f"/>
+              <h3 className="text-black">Condiciones operacionales</h3>
+            </Link>
+          </li>
+          <li>
+            <Link
+              as={NavLink}
+              to="/comparativeModels"
+              className="flex items-center gap-2 p-2 hover:bg-gray-100 rounded-lg"
+            >
+             <Gauge size={20} color="#e8053f"/>
+              <h3 className="text-black">Comparativas</h3>
+            </Link>
+          </li>
+          <li>
+            <Link
+              as={NavLink}
+              to="/reportes"
               className="flex items-center gap-2 p-2 hover:bg-gray-100 rounded-lg"
             >
               <MessageSquareWarning size={20} color="#e8053f" />
@@ -52,7 +72,7 @@ export const ItemsLogged = ({ handleLogout }) => {
           <li>
             <Link
               as={NavLink}
-              to="/dashboard"
+              to="/configuracion"
               className="flex items-center gap-2 p-2 hover:bg-gray-100 rounded-lg"
             >
               <FileSliders size={20} color="#e8053f" />

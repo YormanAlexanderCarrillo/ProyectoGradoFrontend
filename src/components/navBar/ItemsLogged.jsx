@@ -59,7 +59,7 @@ export const ItemsLogged = ({ handleLogout }) => {
               <h3 className="text-black">Comparativas</h3>
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link
               as={NavLink}
               to="/reportes"
@@ -68,7 +68,7 @@ export const ItemsLogged = ({ handleLogout }) => {
               <MessageSquareWarning size={20} color="#e8053f" />
               <h3 className="text-black">Reportes</h3>
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link
               as={NavLink}

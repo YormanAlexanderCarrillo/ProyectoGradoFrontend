@@ -25,8 +25,9 @@ import { ItemsLogged } from "./ItemsLogged";
 import { PredictiveAnalyticsPage } from "../../pages/PredictiveAnalyticsPage";
 import { OperationalConditionsPage } from "../../pages/OperationalConditionsPage";
 import { ComparativeModelsPage } from "../../pages/comparativeModelsPage";  
-import { ReportsPage } from "../../pages/ReportsPage";
 import { SettingsPage } from "../../pages/SettingsPage";
+{/* import { ReportsPage } from "../../pages/ReportsPage"; */}
+
 
 const NavBar = () => {
   const navigate = useNavigate();
@@ -105,7 +106,7 @@ const NavBar = () => {
                   path="/comparativeModels"
                   element={<ComparativeModelsPage />}
                 />
-                <Route path="/reportes" element={<ReportsPage />} />
+                {/*<Route path="/reportes" element={<ReportsPage />} /> */}
                 <Route path="/configuracion" element={<SettingsPage />} />
               </Route>
               <Route path="*" element={<Navigate to="/" replace />} />

@@ -80,7 +80,7 @@ export const ProphetComponent = () => {
   }, [basicStats]);
 
   return (
-    <div className="grid grid-cols-4 grid-rows-4 gap-4 p-3">
+    <div className="grid grid-cols-4 grid-rows-1 gap-4">
       <div className="col-span-4 flex flex-col items-center border-2 border-black">
         <h3>Predicciones y valores reales</h3>
         <PredictionComparisonLine

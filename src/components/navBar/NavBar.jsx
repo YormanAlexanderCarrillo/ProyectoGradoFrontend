@@ -26,6 +26,7 @@ import { PredictiveAnalyticsPage } from "../../pages/PredictiveAnalyticsPage";
 import { OperationalConditionsPage } from "../../pages/OperationalConditionsPage";
 import { ComparativeModelsPage } from "../../pages/comparativeModelsPage";  
 import { SettingsPage } from "../../pages/SettingsPage";
+import { ErrorPage } from "../../pages/ErrorPage"
 {/* import { ReportsPage } from "../../pages/ReportsPage"; */}
 
 
@@ -107,6 +108,7 @@ const NavBar = () => {
                   element={<ComparativeModelsPage />}
                 />
                 {/*<Route path="/reportes" element={<ReportsPage />} /> */}
+                {<Route path="/predictError" element={<ErrorPage/>} />}
                 <Route path="/configuracion" element={<SettingsPage />} />
               </Route>
               <Route path="*" element={<Navigate to="/" replace />} />

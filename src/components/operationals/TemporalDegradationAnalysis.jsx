@@ -103,9 +103,9 @@ export const TemporalDegradationAnalysis = ({ modelPath }) => {
         </CardHeader>
         <CardBody>
           <p className="text-gray-600">
-            Este análisis muestra cómo el tiempo transcurrido desde la última calibración 
+            {/* Este análisis muestra cómo el tiempo transcurrido desde la última calibración 
             afecta la precisión de las mediciones. Una tendencia decreciente indica que 
-            la precisión del sensor disminuye con el tiempo.
+            la precisión del sensor disminuye con el tiempo. */}
           </p>
         </CardBody>
       </Card>
@@ -128,7 +128,7 @@ export const TemporalDegradationAnalysis = ({ modelPath }) => {
                 />
                 <Tooltip 
                   formatter={(value, name) => [
-                    value ? `${(value * 100).toFixed(3)}%` : "N/A",
+                    value ? `${(value ).toFixed(3)}%` : "N/A",
                     name === "meanGas" ? "Nivel de Gas" : 
                     name === "trend" ? "Tendencia" : name
                   ]}
@@ -165,7 +165,7 @@ export const TemporalDegradationAnalysis = ({ modelPath }) => {
         </CardBody>
       </Card>
 
-      <Card>
+      {/* <Card>
         <CardHeader>
           <h3 className="text-lg font-bold">Variabilidad de Mediciones</h3>
         </CardHeader>
@@ -201,9 +201,9 @@ export const TemporalDegradationAnalysis = ({ modelPath }) => {
             </ResponsiveContainer>
           </div>
         </CardBody>
-      </Card>
+      </Card> */}
 
-      <Card>
+      {/* <Card>
         <CardHeader>
           <h3 className="text-lg font-bold">Cantidad de Muestras</h3>
         </CardHeader>
@@ -238,7 +238,7 @@ export const TemporalDegradationAnalysis = ({ modelPath }) => {
             </ResponsiveContainer>
           </div>
         </CardBody>
-      </Card>
+      </Card> */}
     </div>
   );
 };

@@ -187,7 +187,7 @@ export const SettingsModel = () => {
           </div>
         </CardHeader>
         <CardBody className="space-y-6">
-          <div className="flex items-start gap-3 p-4 bg-amber-50 border border-amber-200 rounded-lg">
+          {/* <div className="flex items-start gap-3 p-4 bg-amber-50 border border-amber-200 rounded-lg">
             <AlertTriangle className="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" />
             <div>
               <h3 className="font-medium text-amber-800 mb-1">Reentrenamiento Necesario</h3>
@@ -196,7 +196,7 @@ export const SettingsModel = () => {
                 precisión y rendimiento con la nueva información.
               </p>
             </div>
-          </div>
+          </div> */}
 
           {isRetraining && (
             <div className="space-y-3">

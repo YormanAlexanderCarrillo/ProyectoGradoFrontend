@@ -29,7 +29,7 @@ export const ItemsLogged = ({ handleLogout }) => {
               <h3 className="text-black">Dashboard</h3>
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link
               as={NavLink}
               to="/analisisPredictivo"
@@ -38,7 +38,7 @@ export const ItemsLogged = ({ handleLogout }) => {
              <FileChartColumn size={20} color="#e8053f"/>
               <h3 className="text-black">Analisis Predictivo</h3>
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link
               as={NavLink}
@@ -52,14 +52,14 @@ export const ItemsLogged = ({ handleLogout }) => {
           <li>
             <Link
               as={NavLink}
-              to="/comparativeModels"
+              to="/predictError"
               className="flex items-center gap-2 p-2 hover:bg-gray-100 rounded-lg"
             >
-             <Gauge size={20} color="#e8053f"/>
-              <h3 className="text-black">Comparativas</h3>
+              <Gauge size={20} color="#e8053f"/>
+              <h3 className="text-black">Predecir Error</h3>
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link
               as={NavLink}
               to="/reportes"
@@ -67,6 +67,16 @@ export const ItemsLogged = ({ handleLogout }) => {
             >
               <MessageSquareWarning size={20} color="#e8053f" />
               <h3 className="text-black">Reportes</h3>
+            </Link>
+          </li> */}
+          <li>
+            <Link
+              as={NavLink}
+              to="/comparativeModels"
+              className="flex items-center gap-2 p-2 hover:bg-gray-100 rounded-lg"
+            >
+             <Gauge size={20} color="#e8053f"/>
+              <h3 className="text-black">Comparativas</h3>
             </Link>
           </li>
           <li>

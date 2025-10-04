@@ -26,6 +26,7 @@ export const LinearRegresionComponent = () => {
 
   const getCorrelations = async () => {
     try {
+      console.log(URLAPI)
       const res = await axios.get(`${URLAPI}/regresion/analysis/correlations`);
       setCorrelations(res.data);
     } catch (error) {
@@ -80,28 +81,28 @@ export const LinearRegresionComponent = () => {
 
 
   return (
-    <div className="grid grid-cols-4 grid-rows-4 gap-4 p-3">
+    <div className="grid grid-cols-4 grid-rows-1 gap-4">
       <div className="col-span-4 flex flex-col items-center border-2 border-black">
         <h3>Predicciones y valores reales</h3>
         <PredictionComparisonLine data={prediction} colorPredict="#faaaaa" colorReal="#8884d8" />
     
       </div>
-      <div className="col-span-2 row-start-2 flex flex-col items-center border-2 border-black">
+      <div className="col-span-2 row-start-2 flex flex-col items-center border-2 border-black h-72">
         <h3 className="mb-2">Batería</h3>
         {batteryData.length > 0 && (
           <AnalyticsChart color="#f72460" data={batteryData} />
         )}
       </div>
-      <div className="col-span-2 col-start-3 row-start-2 flex flex-col items-center border-2 border-black">
+      <div className="col-span-2 col-start-3 row-start-2 flex flex-col items-center border-2 border-black h-72">
         <h5 className="mb-2">Temperatura</h5>
         <AnalyticsChart color="#069da4" data={sensorTemperature} />
       </div>
-      <div className="col-span-2 row-start-3 flex flex-col items-center border-2 border-black">
+      <div className="col-span-2 row-start-3 flex flex-col items-center border-2 border-black h-72">
         <h3 className="mb-2">Gas</h3>
         <AnalyticsChart color="#aab500" data={methaneGasLevel} />
       </div>
 
-      <div className="col-span-2 col-start-3 row-start-3 flex flex-col items-center border-2 border-black">
+      <div className="col-span-2 col-start-3 row-start-3 flex flex-col items-center border-2 border-black h-72">
         <h5 className="mb-2">Humedad ambiente</h5>
         <AnalyticsChart color="#098ed0" data={ambientHumidity} />
       </div>

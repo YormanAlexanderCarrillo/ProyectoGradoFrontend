@@ -7,7 +7,8 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
-  ResponsiveContainer
+  ResponsiveContainer,
+  LabelList 
 } from "recharts";
 import { Card, CardBody, CardHeader, Spinner } from "@nextui-org/react";
 
@@ -48,8 +49,8 @@ export const TemperatureImpactAnalysis = ({ modelPath }) => {
     
     return Object.entries(data.temperature_ranges).map(([range, values]) => ({
       range,
-      gasLevel: Number((values.gas_mean * 100).toFixed(2)),
-      stdDev: Number((values.gas_std * 100).toFixed(2)),
+      gasLevel: Number((values.gas_mean).toFixed(5)),
+      stdDev: Number((values.gas_std).toFixed(5)),
       batteryLevel: Number(values.battery_mean.toFixed(1)),
       humidity: Number(values.humidity_mean.toFixed(1)),
       count: values.count
@@ -90,52 +91,59 @@ export const TemperatureImpactAnalysis = ({ modelPath }) => {
         </CardHeader>
         <CardBody>
           <p className="text-gray-600">
-            Este análisis muestra cómo la temperatura del sensor afecta las mediciones 
+            {/* Este análisis muestra cómo la temperatura del sensor afecta las mediciones 
             de gas metano. La temperatura puede influir en la sensibilidad y precisión
-            de los componentes electrónicos del sistema.
+            de los componentes electrónicos del sistema. */}
           </p>
         </CardBody>
       </Card>
 
-      <Card>
+      <Card className="col-span-1 lg:col-span-2">
         <CardHeader>
           <h3 className="text-lg font-bold">Nivel de Gas por Rango de Temperatura</h3>
         </CardHeader>
         <CardBody>
           <div className="h-80">
             <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={chartData}>
+              <BarChart data={chartData} margin={{ top: 30, right: 30, left: 20, bottom: 5 }}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="range" />
                 <YAxis 
                   domain={['auto', 'auto']}
                   label={{ value: 'Porcentaje (%)', angle: -90, position: 'insideLeft' }}
                 />
-                <Tooltip 
-                  formatter={(value, name) => [
-                    `${value}${name === "gasLevel" || name === "stdDev" ? "%" : ""}`,
-                    name === "gasLevel" ? "Nivel de Gas" : 
-                    name === "stdDev" ? "Desviación Estándar" : name
-                  ]}
-                />
                 <Legend />
                 <Bar 
                   dataKey="gasLevel" 
                   name="Nivel de Gas" 
-                  fill="#8884d8" 
-                />
+                  fill="#e39e14"
+                >
+                  <LabelList 
+                    dataKey="gasLevel" 
+                    position="top" 
+                    formatter={(value) => `${value.toFixed(5)}%`}
+                    style={{ fontSize: '12px', fill: '#333' }}
+                  />
+                </Bar>
                 <Bar 
                   dataKey="stdDev" 
-                  name="Desviación Estándar" 
-                  fill="#82ca9d" 
-                />
+                  name="Error de medición" 
+                  fill="#82ca9d"
+                >
+                  <LabelList 
+                    dataKey="stdDev" 
+                    position="top" 
+                    formatter={(value) => `${value.toFixed(4)}%`}
+                    style={{ fontSize: '12px', fill: '#333' }}
+                  />
+                </Bar>
               </BarChart>
             </ResponsiveContainer>
           </div>
         </CardBody>
       </Card>
 
-      <Card>
+      {/* <Card>
         <CardHeader>
           <h3 className="text-lg font-bold">Condiciones por Rango de Temperatura</h3>
         </CardHeader>
@@ -171,9 +179,9 @@ export const TemperatureImpactAnalysis = ({ modelPath }) => {
             </ResponsiveContainer>
           </div>
         </CardBody>
-      </Card>
+      </Card> */}
 
-      <Card className="col-span-1 lg:col-span-2">
+      {/* <Card className="col-span-1 lg:col-span-2">
         <CardHeader>
           <h3 className="text-lg font-bold">Distribución de Muestras</h3>
         </CardHeader>
@@ -202,7 +210,7 @@ export const TemperatureImpactAnalysis = ({ modelPath }) => {
             </ResponsiveContainer>
           </div>
         </CardBody>
-      </Card>
+      </Card> */}
 
       <Card className="col-span-1 lg:col-span-2">
         <CardHeader>
